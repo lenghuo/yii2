@@ -11,7 +11,7 @@ use yii\base\InvalidArgumentException;
 use yii\base\InvalidConfigException;
 
 /**
- * ActiveRelationTrait implements the common methods and properties for active record relational queries.
+ * ActiveRelationTrait 类实现了活动记录关系查询的方法和属性。
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @author Carsten Brandt <mail@cebe.cc>
@@ -24,7 +24,7 @@ use yii\base\InvalidConfigException;
 trait ActiveRelationTrait
 {
     /**
-     * @var bool whether this query represents a relation to more than one record.
+     * @var bool 此查询是否表示与多个记录的关系。
      * This property is only used in relational context. If true, this relation will
      * populate all query results into AR instances using [[Query::all()|all()]].
      * If false, only the first row of the results will be retrieved using [[Query::one()|one()]].
