@@ -25,39 +25,39 @@ trait ActiveRelationTrait
 {
     /**
      * @var bool 此查询是否表示与多个记录的关系。
-     * This property is only used in relational context. If true, this relation will
-     * populate all query results into AR instances using [[Query::all()|all()]].
-     * If false, only the first row of the results will be retrieved using [[Query::one()|one()]].
+     * 此属性仅用于关系上下文。如果为 `true`，
+     * 则此关系将使用 [[Query::all()|all()]] 将所有查询结果填充到 AR 实例中。
+     * 如果为 false，则仅使用 [[Query::one()|one()]] 检索结果的第一行。
      */
     public $multiple;
     /**
-     * @var ActiveRecord the primary model of a relational query.
-     * This is used only in lazy loading with dynamic query options.
+     * @var ActiveRecord 关系查询的主要模型。
+     * 这仅在延迟加载动态查询选项时使用。
      */
     public $primaryModel;
     /**
-     * @var array the columns of the primary and foreign tables that establish a relation.
-     * The array keys must be columns of the table for this relation, and the array values
-     * must be the corresponding columns from the primary table.
-     * Do not prefix or quote the column names as this will be done automatically by Yii.
-     * This property is only used in relational context.
+     * @var array 建立关系的主表和外表的列。
+     * 对于此关系，数组键必须是表的列，
+     * 并且数组值必须是主表中的相应列。
+     * 不要在列名前面加前缀或引号，因为这将由 Yii 自动完成。
+     * 此属性仅在关系上下文中使用。
      */
     public $link;
     /**
-     * @var array|object the query associated with the junction table. Please call [[via()]]
-     * to set this property instead of directly setting it.
-     * This property is only used in relational context.
+     * @var array|object 与连接表关联的查询。请调用 [[via()]] 来设置此属性，
+     * 而不是直接设置它。
+     * 此属性仅在关系上下文中使用。
      * @see via()
      */
     public $via;
     /**
-     * @var string the name of the relation that is the inverse of this relation.
-     * For example, an order has a customer, which means the inverse of the "customer" relation
-     * is the "orders", and the inverse of the "orders" relation is the "customer".
-     * If this property is set, the primary record(s) will be referenced through the specified relation.
-     * For example, `$customer->orders[0]->customer` and `$customer` will be the same object,
-     * and accessing the customer of an order will not trigger new DB query.
-     * This property is only used in relational context.
+     * @var string 与此关系相反的关系的名称。
+     * 例如，一个 order 对应一个 customer，即 "customer" 关系的反向对应的是 "order"，
+     * "order" 关系的反向对应的是 "customer"。
+     * 如果设置了此属性，则将通过指定的关系引用主记录。
+     * 例如，`$customer->order[0]->customer` 和 `$customer` 将是同一个对象，
+     * 访问订单的客户将不会触发新的 DB 查询。
+     * 此属性仅在关系上下文中使用。
      * @see inverseOf()
      */
     public $inverseOf;
@@ -79,9 +79,9 @@ trait ActiveRelationTrait
     }
 
     /**
-     * Specifies the relation associated with the junction table.
+     * 指定与连接表关联的关系。
      *
-     * Use this method to specify a pivot record/table when declaring a relation in the [[ActiveRecord]] class:
+     * 在此 [[ActiveRecord]] 类中声明关系时，使用此方法指定数据透视表/表：
      *
      * ```php
      * class Order extends ActiveRecord
